@@ -30,7 +30,7 @@ CAFFileALAC.o
 
 alacconvert:	$(OBJS)
 	(cd $(CODECDIR); $(MAKE))
-	$(CC) $(LFLAGS) $(OBJS) -o alacconvert
+	$(CC) $(OBJS) -o alacconvert $(LFLAGS)
 
 main.o : main.cpp
 	$(CC) -I $(INCLUDES) $(CFLAGS) main.cpp
