@@ -70,8 +70,8 @@ struct BitBuffer;
 void	set_standard_ag_params(AGParamRecPtr params, uint32_t fullwidth, uint32_t sectorwidth);
 void	set_ag_params(AGParamRecPtr params, uint32_t m, uint32_t p, uint32_t k, uint32_t f, uint32_t s, uint32_t maxrun);
 
-int32_t		dyn_comp(AGParamRecPtr params, int32_t * pc, struct BitBuffer * bitstream, int32_t numSamples, int32_t bitSize, uint32_t * outNumBits);
-int32_t		dyn_decomp(AGParamRecPtr params, struct BitBuffer * bitstream, int32_t * pc, int32_t numSamples, int32_t maxSize, uint32_t * outNumBits);
+int32_t		dyn_comp(AGParamRecPtr params, int32_t * pc, struct BitBuffer * bitstream, uint32_t numSamples, int32_t bitSize, uint32_t * outNumBits);
+int32_t		dyn_decomp(AGParamRecPtr params, struct BitBuffer * bitstream, int32_t * pc, uint32_t numSamples, int32_t maxSize, uint32_t * outNumBits);
 
 
 #ifdef __cplusplus
