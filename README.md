@@ -1,12 +1,21 @@
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+`ORG.SLM:`![GitHub release (latest by date)](https://img.shields.io/github/v/release/Sound-Linux-More/alac)
+![GitHub Release Date](https://img.shields.io/github/release-date/Sound-Linux-More/alac)
+![GitHub repo size](https://img.shields.io/github/repo-size/Sound-Linux-More/alac)
+![GitHub all releases](https://img.shields.io/github/downloads/Sound-Linux-More/alac/total)
+![GitHub](https://img.shields.io/github/license/Sound-Linux-More/alac)  
+
+# ALAC
+
 The Apple Lossless Format
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+---
 
 Apple Lossless supports the following features. Not all of these are implemented in alacconvert, though they are in the codec code provided.
 
 1. Bit depths 16, 20, 24 and 32 bits.
 2. Any arbitrary integer sample rate from 1 to 384,000 Hz. In theory rates up to 4,294,967,295 (2^32 - 1) Hz could be supported.
 3. From one to eight channels are supported. Channel orders for the supported formats are described as:
+```
 	Num Chan	Order
 	1 		mono
 	2 		stereo (Left, Right)
@@ -16,17 +25,18 @@ Apple Lossless supports the following features. Not all of these are implemented
 	6 		MPEG 5.1 D (Center, Left, Right, Left Surround, Right Surround, Low Frequency Effects)
 	7 		Apple AAC 6.1 (Center, Left, Right, Left Surround, Right Surround, Center Surround, Low Frequency Effects)
 	8 		MPEG 7.1 B (Center, Left Center, Right Center, Left, Right, Left Surround, Right Surround,  Low Frequency Effects)
+```
 4. Packet size defaults to 4096 sample frames of audio per packet. Other packet sizes are certainly possible. However, non-default packet sizes are not guaranteed to work properly on all hardware devices that support Apple Lossless. Packets above 16,384 sample frames are not supported.
 
+---
 
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 This package contains the sources for the Apple Lossless (ALAC) encoder and decoder.
 
 The "codec" directory contains all the sources necessary for a functioning codec. Also includes is a makefile that will build libalac.a on a UNIX/Linux machine.
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-ALACconvert
+---
+
+## ALACconvert
 
 The convert-utility directory contains sources to build alacconvert which is a simple utility that demonstrates how to use the included ALAC encoder and decoder.
 
@@ -38,7 +48,4 @@ alacconvert supports the following formats:
 
 Three project are provided to build a command line utility called alacconvert that converts cpm data to ALAC or vice versa. A Mac OS X Xcode project, A Windows Visual Studio project, and a generic UNIX/Linux make file.
 
-Note: When building on Windows, if you are using a version of Visual Studio before Visual Studio 2010, <stdint.h> is not installed. You will need to acquire this file on your own. It can be put in the same directory as the project.
-
-
-
+**Note:** When building on Windows, if you are using a version of Visual Studio before Visual Studio 2010, <stdint.h> is not installed. You will need to acquire this file on your own. It can be put in the same directory as the project.
